@@ -30,15 +30,6 @@ public class AccountApiController {
                 .registeredAt(LocalDateTime.now())
                 .build();
 
-        var str = "테스트";
-        var age = 0;
-
-        try{
-            Integer.parseInt(str);
-        }catch (Exception e){
-            throw new ApiException(ErrorCode.SERVER_ERROR, e, "사용자 Me 호출시 에러 발생");
-        }
-
         return Api.OK(response);
     }
 }
