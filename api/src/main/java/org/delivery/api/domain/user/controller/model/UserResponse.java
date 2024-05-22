@@ -23,9 +23,9 @@ public class UserResponse {
 
     private String address;
 
-    private LocalDateTime registredAt;
+    private LocalDateTime registeredAt;
 
-    private LocalDateTime unregistredAt;
+    private LocalDateTime unregisteredAt;
 
     private LocalDateTime lastLoginAt;
 }

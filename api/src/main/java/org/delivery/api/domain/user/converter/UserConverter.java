@@ -41,8 +41,8 @@ public class UserConverter {
                             .status(userEntity.getStatus())
                             .email(userEntity.getEmail())
                             .address(userEntity.getAddress())
-                            .registredAt(userEntity.getRegistredAt())
-                            .unregistredAt(userEntity.getUnregistredAt())
+                            .registeredAt(userEntity.getRegisteredAt())
+                            .unregisteredAt(userEntity.getUnregisteredAt())
                             .lastLoginAt(userEntity.getLastLoginAt())
                             .build();
                 })

@@ -26,7 +26,7 @@ public class UserService {
         return Optional.ofNullable(userEntity)
                 .map(it ->{
                     userEntity.setStatus(UserStatus.REGISTRED);
-                    userEntity.setRegistredAt(LocalDateTime.now());
+                    userEntity.setRegisteredAt(LocalDateTime.now());
 
                     return userRepository.save(userEntity);
                 })
