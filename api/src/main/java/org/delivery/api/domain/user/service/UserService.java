@@ -37,17 +37,27 @@ public class UserService {
             String email,
             String password
     ){
-        var entity = getUserWithThorw(email, password);
+        var entity = getUserWithThrow(email, password);
         return entity;
     }
 
-    public UserEntity getUserWithThorw(
+    public UserEntity getUserWithThrow(
             String email,
             String password
     ){
         return userRepository.findFirstByEmailAndPasswordAndStatusOrderByIdDesc(
                 email,
                 password,
+                UserStatus.REGISTRED
+        ).orElseThrow(() -> new ApiException(UserErrorCode.USER_NOT_FOUND));
+    }
+
+
+    public UserEntity getUserWithThrow(
+            Long userId
+    ){
+        return userRepository.findFirstByIdAndStatusOrderByIdDesc(
+                userId,
                 UserStatus.REGISTRED
         ).orElseThrow(() -> new ApiException(UserErrorCode.USER_NOT_FOUND));
     }
